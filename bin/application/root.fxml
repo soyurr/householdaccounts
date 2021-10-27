@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RootController">
+   <center>
+      <SplitPane fx:id="centerPanel" dividerPositions="0.501953125" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: lightblue;">
+               <children>
+                  <GridPane hgap="5.0" prefHeight="210.0" prefWidth="800.0" vgap="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="397.0" minWidth="10.0" prefWidth="112.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="706.0" minWidth="10.0" prefWidth="677.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button minWidth="100.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="110.0" text="SERIALNO" />
+                        <Button minWidth="100.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="111.0" text="DAY" GridPane.rowIndex="1" />
+                        <Button minWidth="100.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="110.0" text="SECTION" GridPane.rowIndex="2" />
+                        <Button minWidth="100.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="110.0" text="ACCOUNTTITLE" GridPane.rowIndex="3" />
+                        <Button minWidth="100.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="109.0" text="REMARK" GridPane.rowIndex="4" />
+                        <Button minWidth="100.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="109.0" text="REVENUE" GridPane.rowIndex="5" />
+                        <Button minWidth="100.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="111.0" text="EXPENSE" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtSerialno" editable="false" GridPane.columnIndex="1" />
+                        <DatePicker fx:id="txtDay" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin></DatePicker>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <RadioButton fx:id="radioRevenue" mnemonicParsing="false" text="수입" />
+                              <RadioButton fx:id="radioExpense" mnemonicParsing="false" text="지출" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <ComboBox fx:id="comboAccounttitle" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextArea fx:id="txtRemark" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtRevenue" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtExpense" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     </children>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </GridPane>
+                  <HBox alignment="BOTTOM_LEFT" layoutX="286.0" layoutY="210.0" prefHeight="36.0" prefWidth="523.0" spacing="5.0" style="-fx-background-color: lightblue;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="-11.0" AnchorPane.topAnchor="210.0">
+                     <children>
+                        <Button fx:id="btnInsert" minWidth="80.0" mnemonicParsing="false" onAction="#insert" style="-fx-background-color: lightyellow;" text="INSERT" textFill="#212122" />
+                        <Button fx:id="btnUpdate" minWidth="80.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: lightyellow;" text="UPDATE" textFill="#212122" />
+                        <Button fx:id="btnDelete" minWidth="80.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: lightyellow;" text="DELETE" textFill="#212122" />
+                        <Button fx:id="btnSelectByConditions" minWidth="80.0" mnemonicParsing="false" onAction="#selectByConditions" style="-fx-background-color: lightyellow;" text="INDEX" textFill="#212122" />
+                        <Button fx:id="btnSelectAll" minWidth="80.0" mnemonicParsing="false" onAction="#selectAll" style="-fx-background-color: lightyellow;" text="ALL" textFill="#212122" />
+                        <Button fx:id="btnClear" minWidth="80.0" mnemonicParsing="false" onAction="#clear" style="-fx-background-color: lightyellow;" text="CLEAR" textFill="#212122" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <BorderPane fx:id="contentPanel" layoutX="6.0" prefHeight="317.0" prefWidth="786.0" style="-fx-background-color: darkgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <top>
+      <HBox prefHeight="49.0" prefWidth="800.0" style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField alignment="CENTER" editable="false" prefHeight="81.0" prefWidth="805.0" style="-fx-background-color: lightblue;" text="Financial ledger">
+               <font>
+                  <Font name="Elephant" size="43.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
